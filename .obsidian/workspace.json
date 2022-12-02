@@ -1,0 +1,148 @@
+{
+  "main": {
+    "id": "14b6ed93ba37b16b",
+    "type": "split",
+    "children": [
+      {
+        "id": "e40cd72b8affe134",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e3109bb101e3befd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_pages/study/Anaconda.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "858f4aac3398ed6f",
+    "type": "split",
+    "children": [
+      {
+        "id": "94f7e9910887d3ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "85998b190db5bdba",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ac0bc24875ddf8f0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fa0521e33816057d",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 201.5
+  },
+  "right": {
+    "id": "8bd763f21397847c",
+    "type": "split",
+    "children": [
+      {
+        "id": "64d990a7190944c9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e30808d4db5f6cd4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_pages/study/Anaconda.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f5efc8922c2d9395",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_pages/study/Anaconda.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "abbe154cd1ed6a99",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "670316239afaef45",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_pages/study/Anaconda.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "e3109bb101e3befd",
+  "lastOpenFiles": [
+    "_pages/study/Android.md",
+    "_pages/study/Django.md",
+    "_pages/study/Anaconda.md",
+    "_pages/study/HTML & CSS.md",
+    "_pages/about.md",
+    "_pages/django.md"
+  ]
+}

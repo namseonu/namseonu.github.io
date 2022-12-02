@@ -1,0 +1,11 @@
+{
+  "accentColor": "",
+  "interfaceFontFamily": "Pretendard",
+  "textFontFamily": "Pretendard",
+  "monospaceFontFamily": "JetBrains Mono",
+  "baseFontSize": 14,
+  "enabledCssSnippets": [
+    "line-height",
+    "tag"
+  ]
+}

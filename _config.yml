@@ -6,7 +6,7 @@ email:            ska2870ghk@naver.com
 description: >
   My online study room
 
-version:          1.0
+# version:          1.0
 gitbook_version:  3.2.3
 
 url:              'https://namseonu.github.io/'

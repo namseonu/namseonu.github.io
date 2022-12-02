@@ -5,13 +5,13 @@ date: 2022-12-02
 category: server
 layout: post
 ---
-
+---
 ## 목차
 1. [Django 시작하기](#django-시작하기)
 2. [Django 명령어](#django-명령어)
+<br>
 
-</br>
-
+---
 ## Django 시작하기
 ### 1. 가상환경 설정하기 
 1.1. Anaconda
@@ -38,7 +38,7 @@ source 가상환경이름/bin/activate
 # (참고) 가상환경 비활성화
 deactivate
 ```
-</br>
+
 
 ### 2. 필요한 패키지 다운받기  
 2.1. pip 버전 확인
@@ -66,7 +66,7 @@ pip install django
 # 만약 anaconda 가상환경을 사용할 경우 아래 명령어도 입력해 준다.
 conda install django
 ```
-</br>
+
 
 ### 3. Django 프로젝트 생성 및 불러오기
 3.1. 새로운 프로젝트 생성
@@ -79,12 +79,12 @@ django-admin startproject 장고프로젝트명
 ```bash
 git clone 레포지토리주소
 ```
-</br>
+
 
 ### 4. Django 프로젝트 열기
 파이참에서 만들어진 장고 프로젝트를 연다.
 이때 `File-Settings-Project: 프로젝트명-Python Interpreter`에 가서 기존에 만들었던 가상환경으로 설정해 준다.
-</br>
+
 
 ### 5. Django 서버 실행하기
 아래 명령어를 입력해 실행한 서버는 웹 브라우저에 `localhost:8000`으로 확인할 수 있다.
@@ -92,7 +92,7 @@ git clone 레포지토리주소
 # 이때 manage.py가 있는 경로에서 해당 명령어를 실행시키거나 manage.py의 경로까지 전부 적어야 한다.
 python manage.py runserver
 ```
-</br>
+
 
 ## Django 명령어
 | 명령어 | 설명 | 예시 |

@@ -9,7 +9,7 @@ layout: post
 ## 목차
 1. [명령어](#명령어)
 2. [트러블슈팅](#트러블슈팅)
-</br>
+
 
 ## 명령어
 
@@ -52,7 +52,7 @@ conda deactivate
 ```bash
 conda update -n base -c defaults conda
 ```
-</br>
+
 
 ## 트러블슈팅
 > PackagesNotFoundError: The following packages are not available from current channels:

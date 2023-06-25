@@ -61,3 +61,6 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
+
+# Site settings
+future: true

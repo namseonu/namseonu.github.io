@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d032eb483b8cbb1a",
+        "id": "cfa907d2a9f56e24",
         "type": "tabs",
         "children": [
           {
-            "id": "3bd5fad383833ec5",
+            "id": "2d0a145ed3deb72b",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -134,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,6 +149,10 @@
   },
   "active": "85998b190db5bdba",
   "lastOpenFiles": [
+    "_pages/무제 파일.md",
+    "_pages/about.md",
+    "_pages/2023-06-26-CICD환경변수설정하기.md",
+    "templates/post.md",
     "_pages/Architecture/Cloud Native(클라우드 네이티브).md",
     "_pages/Architecture/MSA(Microservice Architecture).md",
     "images/Pasted image 20230621034929.png",
@@ -160,9 +165,7 @@
     "_pages/React",
     "_pages/Spring Boot",
     "_pages/DevOps/Kubernetes (쿠버네티스).md",
-    "templates/post.md",
     "2023-06-20.md",
-    "_pages/about.md",
     "templates",
     "images",
     "_pages/study/Android.md",

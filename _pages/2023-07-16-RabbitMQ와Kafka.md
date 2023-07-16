@@ -27,13 +27,13 @@ RabbitMQ는 메시지 브로커로서 전통적인 메시지 큐(Message Queue)*
 > 메시지 큐(Message Queue) 방식은 메시지 브로커에서 주로 사용되는 하위 구조 또는 구성 요소이다. 확실한 메시지 저장 및 전달을 보장하기 위해 메시지 브로커는 메시지를 저장하고 순서화하는 메시지 큐를 종종 사용한다. 메시지 큐에는 메시지가 전송된 순서대로 저장되며, 수신이 확인될 때까지 메시지는 큐에 남아 있는다.
 
 ## 2. RabbitMQ의 구조
-<img src="../images/rabbitmq_230716_02.png" width="500">
+<img src="../../images/rabbitmq_230716_02.png" width="500">
 
 RabbitMQ의 구조에는 크게 송신자(Producer), 메시지 브로커(Message Broker), 수신자(Consumer), 그리고 메시지(Message)가 있다. 각 요소에 대한 설명은 아래를 참고하면 된다.
 
 <br>
 
-<img src="../images/rabbitmq_230716_01.png" width="500">
+<img src="../../images/rabbitmq_230716_01.png" width="500">
 
 추가로, 위의 그림은 Microsoft의 공식 문서에서 가져온 RabbitMQ를 이용한 예시이다. 여기서 송신자는 'Microservice Origin'에 해당하고, 수신자는 'Microservice A/B'이다. 여기서는 MSA(Microservice Architecture)라고 하는 아키텍처에서도 RabbitMQ를 사용하여 메시지 큐를 구현하고 있는 모습을 확인할 수 있었다.
 

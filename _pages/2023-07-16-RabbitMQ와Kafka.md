@@ -1,0 +1,90 @@
+---
+title: RabbitMQ란?
+author: Nam Seonwoo
+date: 2023-07-16
+category: Jekyll
+layout: post
+published: true
+---
+
+<br>
+
+## 목차
+1. [RabbitMQ란?](#1-rabbitmq란)
+2. [RabbitMQ의 구조](#2-rabbitmq의-구조)
+3. [RabbitMQ의 장단점](#3-rabbitmq의-장단점)
+4. [참고 자료](#4-참고-자료)
+
+<br>
+
+## 1. RabbitMQ란?
+[RabbitMQ](https://www.rabbitmq.com/)는 가장 널리 쓰이는 메시지 브로커(Message Broker)* 오픈 소스(Open Source)이다. 즉, 메시지 브로커의 구현체라고 볼 수 있다. RabbitMQ는 AMQP(Advanced Message Queing Protocol, MQ 표준 프로토컬)를 따르는 메시지 브로커 오픈 소스 중 하나이다.
+
+> 메시지 브로커(Message Broker)는 애플리케이션, 시스템 및 서비스가 서로 간에 통신하고 정보를 교환할 수 있도록 해주는 소프트웨어이다. 메시지 브로커는 메시지를 검증, 저장, 라우팅하고 이를 적절한 대상에 전달할 수 있다. 다른 애플리케이션 간의 중개자 역할을 함으로써 수신자의 위치, 수신자가 활성인지 여부 또는 수신자의 수를 잘 몰라도 송신자가 메시지를 발행할 수 있게 한다.
+
+RabbitMQ는 메시지 브로커로서 전통적인 메시지 큐(Message Queue)* 방식을 지원하며, 컴포넌트 간의 메시지 전달을 위한 브로커 역할을 수행한다. 이를 통해 서로 다른 시스템 혹은 컴포넌트 간에 효율적으로 메시지를 교환할 수 있는 다양한 기능을 제공한다.
+
+> 메시지 큐(Message Queue) 방식은 메시지 브로커에서 주로 사용되는 하위 구조 또는 구성 요소이다. 확실한 메시지 저장 및 전달을 보장하기 위해 메시지 브로커는 메시지를 저장하고 순서화하는 메시지 큐를 종종 사용한다. 메시지 큐에는 메시지가 전송된 순서대로 저장되며, 수신이 확인될 때까지 메시지는 큐에 남아 있는다.
+
+## 2. RabbitMQ의 구조
+<img src="../images/rabbitmq_230716_02.png" width="500">
+
+RabbitMQ의 구조에는 크게 송신자(Producer), 메시지 브로커(Message Broker), 수신자(Consumer), 그리고 메시지(Message)가 있다. 각 요소에 대한 설명은 아래를 참고하면 된다.
+
+<br>
+
+<img src="../images/rabbitmq_230716_01.png" width="500">
+
+추가로, 위의 그림은 Microsoft의 공식 문서에서 가져온 RabbitMQ를 이용한 예시이다. 여기서 송신자는 'Microservice Origin'에 해당하고, 수신자는 'Microservice A/B'이다. 여기서는 MSA(Microservice Architecture)라고 하는 아키텍처에서도 RabbitMQ를 사용하여 메시지 큐를 구현하고 있는 모습을 확인할 수 있었다.
+
+### ❖ 송신자(Producer)
+- 메시지를 수신자에게 위임하기 위해 메시지를 Exchange에 발행(publish)한다.
+- 송신자가 발행한 메시지는 RabbitMQ와 같은 메시지 브로커의 Exchange에 전달된다.
+- 송신자는 주로 메시지를 발행시키는 역할만을 수행한다.
+
+### ❖ Exchange
+- 송신자에게 전달받은 메시지를 큐(Queue)에 전달한다.
+- 메시지를 어떤 큐에 추가할지, 얼마나 추가할지, 아니면 버려야 할지 등을 규칙으로 정의해둔다.
+  - 이 규칙을 Exchange Type이라고 한다.
+  - 규칙 예)
+    - Fanout: 알려진 모든 큐에게 메시지 전달
+    - Direct: 지정된 routing key를 가진 큐에게만 메시지 전달
+    - Topic: 지정된 패턴 형태에 일치하는 큐에만 메시지 전달
+
+### ❖ 큐(Queue)
+- 송신자 → Exchange를 거쳐 메시지가 바인딩되는 곳이다.
+- 즉, 메시지를 저장하는 버퍼로 이해하면 된다.
+- 전달받은 메시지들을 연결된 수신자에게 공평하게 나누어준다.
+  - 이때 병렬 처리를 사용하며, 보통 Round-Robin 스케줄링 방식을 사용한다.
+
+### ❖ 수신자(Consumer)
+- 메시지를 송신자로부터 위임받아 처리(consume)한다.
+- 참고로, 동일한 큐를 바라보는 수신자는 Round-Robin 방식에 의해 자동으로 분배된다.
+
+<br>
+
+## 3. RabbitMQ의 장단점
+### ❖ 장점
+- Zookeepr 같은 코디네티어가 별도로 필요하지 않다.
+- Exchange Type이나 라우팅 정책에 따라 동작 방식을 선택할 수 있다.
+  - 따라서 복잡한 라우팅 서비스를 구축할 경우 사용하면 좋다.
+- 신속한 요청 및 응답이 필요한 웹 서버에 적합하다.
+  - 즉, 지연 시간이 짧다.
+- Kafka보다 광범위한 언어 및 레거시 프로토콜을 지원한다.
+
+### ❖ 단점
+- 대용량의 분산 로그 트래픽을 처리하는 데 유리한 Kafka보다는 성능이 떨어진다.
+  - 즉, 대용량 트래픽에는 조금 불리하다.
+- 초당 수백만 개의 메시지를 보낼 때 별도의 브로커를 생성해야 하므로 메시지 전송 용량에서 Kafka보다 부족하다.
+- RabbitMQ의 대기열이 혼잡하면 속도가 느려질 수 있다.
+
+<br>
+
+## 4. 참고 자료
+- [IBM, 「메시지 브로커란?」](https://www.ibm.com/kr-ko/topics/message-brokers)
+- [NAVER CLOUD PLATFORM, 「RabbitMQ 사용 가이드」](https://guide.ncloud-docs.com/docs/rabbitmq-rabbitmq-1-1)
+- [RabbitMQ](https://www.rabbitmq.com/)
+- [Microsoft, 「RabbitMQ를 사용하여 개발 또는 테스트 환경에 대한 이벤트 서비스 구현」](https://learn.microsoft.com/ko-kr/dotnet/architecture/microservices/multi-container-microservice-net-applications/rabbitmq-event-bus-development-test-environment)
+- [CloudAMQP, 「Part 1: RabbitMQ for beginners - What is RabbitMQ?」, 2019. 09. 23.](https://www.cloudamqp.com/blog/part1-rabbitmq-for-beginners-what-is-rabbitmq.html)
+- [kakao Tech, 「카카오 개발자들을 위한 공용 Message Streaming Platform - Kafka & RabbitMQ」, 2021. 12. 23.](https://tech.kakao.com/2021/12/23/kafka-rabbitmq/)
+- [aws, 「Kafka와 RabbitMQ의 차이점은 무엇인가요?」](https://aws.amazon.com/ko/compare/the-difference-between-rabbitmq-and-kafka/)
